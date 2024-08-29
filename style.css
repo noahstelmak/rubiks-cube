@@ -1,0 +1,43 @@
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+body {
+    background-color: darkslategray;
+    height: 100vh;
+    margin: 0;
+}
+
+rubiks-cube {
+    transform-style: preserve-3d;
+    position: absolute;
+    height: var(--size);
+    width: var(--size);
+    right: calc(50% - var(--size) / 2);
+    bottom: calc(50% - var(--size) / 2);
+}
+
+rubiks-piece {
+    transform-style: preserve-3d;
+    display: block;
+    position: absolute;
+    height: var(--ssize);
+    width: var(--ssize);
+
+}
+
+rubiks-piece:hover>rubiks-face {
+    filter: brightness(90%);
+}
+
+rubiks-face {
+    transform-style: preserve-3d;
+    display: block;
+    position: absolute;
+    height: var(--ssize);
+    width: var(--ssize);
+}

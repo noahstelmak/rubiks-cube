@@ -1,0 +1,4 @@
+:root {
+    --size: round(down, calc(100vh / sqrt(3)), 1px);
+    --ssize: round(down, calc(var(--size) / 3), 1px);
+}
