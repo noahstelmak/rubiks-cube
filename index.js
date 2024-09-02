@@ -1,10 +1,17 @@
-
 import { rubiksBuilder } from "./lib/rubiks_builder.js";
 import { MatrixStyle } from "./lib/matrix_style.js";
 import { TransformMatrix } from "./lib/transform_matrix.js";
-import { size, ssize } from "./consts.js";
 
-const [rubiks_cube, rubiks_pieces] = rubiksBuilder();
+const viewHeight = document.scrollingElement.scrollHeight;
+
+const size = Math.floor(viewHeight / Math.sqrt(3));
+
+const ssize = Math.floor(size / 3);
+
+document.documentElement.style.setProperty('--size', `${size}px`);
+document.documentElement.style.setProperty('--ssize', `${ssize}px`);
+
+const [rubiks_cube, rubiks_pieces] = rubiksBuilder(ssize);
 
 MatrixStyle.update(rubiks_cube, new TransformMatrix().rotate([0, -60, 0]).rotate([30, 0, 0]));
 
